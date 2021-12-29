@@ -7,3 +7,15 @@ a {
   text-decoration: none;
 }
 
+.p-button.upload-input {
+  color: #495057;
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  width: 100%;
+  flex-direction: row-reverse;
+
+  .p-button-label {
+    text-align: left;
+  }
+}
+

@@ -4,6 +4,8 @@ import {SearchComponent} from "./search/search.component";
 import {SearchResultComponent} from "./search-result/search-result.component";
 import {PlantComponent} from "./plant/plant.component";
 import {MyPlantComponent} from "./my-plant/my-plant.component";
+import {MyPlantsComponent} from "./my-plants/my-plants.component";
+import {AddPlantComponent} from "./add-plant/add-plant.component";
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     component: MyPlantComponent,
     path: 'my-plant'
+  },
+  {
+    component: MyPlantsComponent,
+    path: 'my-plants'
+  },
+  {
+    component: AddPlantComponent,
+    path: 'add-plant'
   }
 ];
 

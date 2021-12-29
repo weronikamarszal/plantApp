@@ -1,0 +1,33 @@
+<h2>Dodaj nową roślinę</h2>
+  <p-divider></p-divider>
+
+  <div class="p-inputgroup ui-fluid">
+    <p-multiSelect [options]="[]" optionLabel="name" placeholder="Wyszukaj z bazy"></p-multiSelect>
+  </div>
+
+  <p-divider></p-divider>
+<div>
+  <h3>Dodaj własną roślinę</h3>
+  <pa-form-field>
+    <input pInputText placeholder="Nazwa">
+  </pa-form-field>
+  <pa-form-field>
+    <input pInputText placeholder="Opis">
+  </pa-form-field>
+  <pa-form-field>
+    <p-multiSelect [options]="[]" optionLabel="name" placeholder="Dodaj do grupy"></p-multiSelect>
+  </pa-form-field>
+  <pa-form-field>
+    <p-fileUpload styleClass="upload-input p-button-icon-right"
+                  [ngStyle]="{width: '100%'}"
+                  chooseLabel="Dodaj zdjęcie" mode="basic" accept="image/*" [maxFileSize]="1000000"></p-fileUpload>
+
+  </pa-form-field>
+
+
+</div>
+
+<div>
+  <label for="reminder"> Ustaw przypomnienie o podlewaniu </label>
+  <p-inputSwitch inputId="reminder"></p-inputSwitch>
+</div>

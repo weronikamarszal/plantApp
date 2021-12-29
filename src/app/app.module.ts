@@ -13,6 +13,15 @@ import {RippleModule} from "primeng/ripple";
 import {MultiSelectModule} from "primeng/multiselect";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CarouselModule} from "primeng/carousel";
+import {InputSwitchModule} from "primeng/inputswitch";
+import {MenubarModule} from "primeng/menubar";
+import { MyPlantsComponent } from './my-plants/my-plants.component';
+import { AddPlantComponent } from './add-plant/add-plant.component';
+import {AutoCompleteModule} from "primeng/autocomplete";
+import {FormFieldModule} from "../common/components/form-field/form-field.component";
+import {DividerModule} from "primeng/divider";
+import {FileUploadModule} from "primeng/fileupload";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,9 +29,12 @@ import {CarouselModule} from "primeng/carousel";
     SearchComponent,
     SearchResultComponent,
     PlantComponent,
-    MyPlantComponent
+    MyPlantComponent,
+    MyPlantsComponent,
+    AddPlantComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
