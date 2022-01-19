@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-plant.component.scss']
 })
 export class AddPlantComponent implements OnInit {
+  isReminderChecked: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onReminderChange($event: any) {
+    this.isReminderChecked = $event.checked;
   }
 
 }

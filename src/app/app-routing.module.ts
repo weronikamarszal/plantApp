@@ -6,6 +6,11 @@ import {PlantComponent} from "./plant/plant.component";
 import {MyPlantComponent} from "./my-plant/my-plant.component";
 import {MyPlantsComponent} from "./my-plants/my-plants.component";
 import {AddPlantComponent} from "./add-plant/add-plant.component";
+import {CalendarComponent} from "./calendar/calendar.component";
+import {PlantsDiaryComponent} from "./plants-diary/plants-diary.component";
+import {GroupComponent} from "./group/group.component";
+import {AddGroupComponent} from "./add-group/add-group.component";
+import {EditGroupComponent} from "./edit-group/edit-group.component";
 
 const routes: Routes = [
   {
@@ -31,6 +36,26 @@ const routes: Routes = [
   {
     component: AddPlantComponent,
     path: 'add-plant'
+  },
+  {
+    component: PlantsDiaryComponent,
+    path: 'plants-diary'
+  },
+  {
+    component: CalendarComponent,
+    path: 'calendar'
+  },
+  {
+    component: GroupComponent,
+    path: 'group1'
+  },
+  {
+    component: AddGroupComponent,
+    path: 'add-group'
+  },
+  {
+    component: EditGroupComponent,
+    path: 'edit-group'
   }
 ];
 

@@ -29,5 +29,19 @@
 
 <div>
   <label for="reminder"> Ustaw przypomnienie o podlewaniu </label>
-  <p-inputSwitch inputId="reminder"></p-inputSwitch>
+  <p-inputSwitch inputId="reminder" (onChange)="onReminderChange($event)"></p-inputSwitch>
+
 </div>
+
+<p-dialog [closable]="false" header="Przypomnienie o podlewaniu" [(visible)]="isReminderChecked">
+  <pa-form-field>
+    <p-multiSelect [options]="[]" appendTo="body" optionLabel="name" placeholder="Jak często?"></p-multiSelect>
+  </pa-form-field>
+  <pa-form-field>
+    <p-calendar placeholder="Od kiedy?" appendTo="body"></p-calendar>
+  </pa-form-field>
+
+  <button pButton type="button" label="Anuluj" (click)="isReminderChecked=false" ></button>
+  <button pButton type="button" label="Zapisz" (click)="isReminderChecked=false"></button>
+
+</p-dialog>

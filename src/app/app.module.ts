@@ -22,6 +22,22 @@ import {FormFieldModule} from "../common/components/form-field/form-field.compon
 import {DividerModule} from "primeng/divider";
 import {FileUploadModule} from "primeng/fileupload";
 import {HttpClientModule} from "@angular/common/http";
+import { CalendarComponent } from './calendar/calendar.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
+import dayGridPlugin from '@fullcalendar/daygrid';
+import {DialogModule} from "primeng/dialog";
+import {CalendarModule} from "primeng/calendar";
+import { PlantsDiaryComponent } from './plants-diary/plants-diary.component';
+import {TimelineModule} from "primeng/timeline";
+import { GroupComponent } from './group/group.component';
+import { AddGroupComponent } from './add-group/add-group.component';
+import {CheckboxModule} from "primeng/checkbox";
+import { EditGroupComponent } from './edit-group/edit-group.component';
+
+FullCalendarModule.registerPlugins([
+  dayGridPlugin
+]);
+
 
 @NgModule({
   declarations: [
@@ -31,7 +47,12 @@ import {HttpClientModule} from "@angular/common/http";
     PlantComponent,
     MyPlantComponent,
     MyPlantsComponent,
-    AddPlantComponent
+    AddPlantComponent,
+    CalendarComponent,
+    PlantsDiaryComponent,
+    GroupComponent,
+    AddGroupComponent,
+    EditGroupComponent
   ],
   imports: [
     HttpClientModule,

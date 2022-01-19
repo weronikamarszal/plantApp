@@ -1,0 +1,11 @@
+<h1> Dziennik upraw </h1>
+
+
+<p-timeline [value]="events">
+  <ng-template pTemplate="opposite" let-event>
+    <small class="p-text-secondary">{{event.date}}</small>
+  </ng-template>
+  <ng-template pTemplate="content" let-event>
+    {{event.status}}
+  </ng-template>
+</p-timeline>

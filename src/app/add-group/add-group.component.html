@@ -1,0 +1,42 @@
+<h2>Dodaj nową grupę</h2>
+<p-divider></p-divider>
+
+<div>
+  <pa-form-field>
+    <input pInputText placeholder="Nazwa">
+  </pa-form-field>
+  <h3>Dodaj rośliny do grupy:</h3>
+  <pa-form-field>
+    <p-checkbox name="groupname" value="val1" label="Strelicja"></p-checkbox>
+    <img src="../../assets/images/strelicja.jpeg">
+  </pa-form-field>
+  <pa-form-field>
+    <p-checkbox name="groupname" value="val1" label="Fikus"></p-checkbox>
+    <img src="../../assets/images/fikus.jpeg">
+  </pa-form-field>
+  <pa-form-field>
+    <p-checkbox name="groupname" value="val1" label="Kaktus"></p-checkbox>
+    <img src="../../assets/images/kaktus.jpeg">
+  </pa-form-field>
+
+
+</div>
+
+<div>
+  <label for="reminder"> Ustaw przypomnienie o podlewaniu dla grupy </label>
+  <p-inputSwitch inputId="reminder" (onChange)="onReminderChange($event)"></p-inputSwitch>
+
+</div>
+
+<p-dialog [closable]="false" header="Przypomnienie o podlewaniu dla całej grupy" [(visible)]="isReminderChecked">
+  <pa-form-field>
+    <p-multiSelect [options]="[]" appendTo="body" optionLabel="name" placeholder="Jak często?"></p-multiSelect>
+  </pa-form-field>
+  <pa-form-field>
+    <p-calendar placeholder="Od kiedy?" appendTo="body"></p-calendar>
+  </pa-form-field>
+
+  <button pButton type="button" label="Anuluj" (click)="isReminderChecked=false"></button>
+  <button pButton type="button" label="Zapisz" (click)="isReminderChecked=false"></button>
+
+</p-dialog>
