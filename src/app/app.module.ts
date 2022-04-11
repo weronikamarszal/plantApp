@@ -67,7 +67,20 @@ FullCalendarModule.registerPlugins([
     InputTextModule,
     RippleModule,
     MultiSelectModule,
-    CarouselModule
+    CarouselModule,
+    InputSwitchModule,
+    MenubarModule,
+    AutoCompleteModule,
+    FormFieldModule,
+    DividerModule,
+    FileUploadModule,
+    FullCalendarModule,
+    DialogModule,
+    CalendarModule,
+    TimelineModule,
+    CheckboxModule,
+    FormsModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
