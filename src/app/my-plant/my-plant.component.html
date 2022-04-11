@@ -1,0 +1,64 @@
+<h2>Fikus</h2>
+<div>
+  <button pButton pRipple type="button" label="Dodaj własną nazwę"
+          class="p-button-rounded p-button-success">
+  </button>
+</div>
+<div>
+  <button pButton pRipple type="button" label="Dodaj zdjęcie"
+          class="p-button-rounded p-button-success">
+  </button>
+</div>
+<div>
+  <button pButton pRipple type="button" label="Dodaj do grupy"
+          class="p-button-rounded p-button-success">
+  </button>
+</div>
+<div>
+  <label for="reminder"> Ustaw przypomnienie o podlewaniu </label>
+  <p-inputSwitch inputId="reminder" (onChange)="onReminderChange($event)"></p-inputSwitch>
+</div>
+
+<p-dialog [closable]="false" header="Przypomnienie o podlewaniu" [(visible)]="isReminderChecked">
+  <pa-form-field>
+    <p-multiSelect [options]="[]" appendTo="body" optionLabel="name" placeholder="Jak często?"></p-multiSelect>
+  </pa-form-field>
+  <pa-form-field>
+    <p-calendar placeholder="Od kiedy?" appendTo="body"></p-calendar>
+  </pa-form-field>
+
+  <button pButton type="button" label="Anuluj" (click)="isReminderChecked=false" ></button>
+  <button pButton type="button" label="Zapisz" (click)="isReminderChecked=false"></button>
+
+</p-dialog>
+
+<p></p>
+
+<p-carousel [value]="plants" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
+            [autoplayInterval]="3000">
+  <ng-template let-product pTemplate="item">
+    <div class="product-item">
+      <div class="product-item-content">
+        <div class="p-mb-3">
+          <img src="assets/images/{{product.image}}" [alt]="product.name" style="width: 20vw"/>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam turpis a nulla sodales tempor. Suspendisse
+  imperdiet facilisis dolor, eu maximus lorem hendrerit eu. Phasellus ullamcorper leo vitae lacinia dapibus.
+  Pellentesque eleifend congue diam vel hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+  per inceptos himenaeos. Fusce sagittis ante at dictum facilisis. Quisque eu mauris nunc. Maecenas vitae est nulla.
+  Suspendisse accumsan neque in feugiat tristique. Mauris semper rhoncus mi, non elementum tortor vestibulum vitae.
+  Mauris neque mi, ultricies et sodales at, sollicitudin ac ex. Aenean egestas commodo erat, non dapibus erat. Fusce
+  pellentesque massa non auctor aliquam.
+</div>
+
+<a routerLink="/plant">
+  <button icon="pi pi-minus-circle" pButton pRipple type="button" label="Usuń z moich roślin"
+          class="p-button-rounded p-button-success">
+  </button>
+</a>

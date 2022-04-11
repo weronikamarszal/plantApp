@@ -1,0 +1,31 @@
+<h2>Fikus</h2>
+<a routerLink="/my-plant">
+  <button icon="pi pi-plus-circle" pButton pRipple type="button" label="Dodaj do moich roślin"
+          class="p-button-rounded p-button-success">
+  </button>
+</a>
+<p></p>
+
+<p-carousel [value]="plants" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
+            [autoplayInterval]="3000">
+  <ng-template let-product pTemplate="item">
+    <div class="product-item">
+      <div class="product-item-content">
+        <div class="p-mb-3">
+          <img src="assets/images/{{product.image}}" [alt]="product.name" style="width: 20vw"/>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam turpis a nulla sodales tempor. Suspendisse
+  imperdiet facilisis dolor, eu maximus lorem hendrerit eu. Phasellus ullamcorper leo vitae lacinia dapibus.
+  Pellentesque eleifend congue diam vel hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+  per inceptos himenaeos. Fusce sagittis ante at dictum facilisis. Quisque eu mauris nunc. Maecenas vitae est nulla.
+  Suspendisse accumsan neque in feugiat tristique. Mauris semper rhoncus mi, non elementum tortor vestibulum vitae.
+  Mauris neque mi, ultricies et sodales at, sollicitudin ac ex. Aenean egestas commodo erat, non dapibus erat. Fusce
+  pellentesque massa non auctor aliquam.
+</div>
+
