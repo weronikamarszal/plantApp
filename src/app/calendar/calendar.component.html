@@ -1,1 +1,36 @@
 <full-calendar [options]="calendarOptions"></full-calendar>
+
+<p-dialog [closable]="false"
+          header="Przypomnienie o podlewaniu"
+          [(visible)]="isRemindActive">
+  <div class="p-fluid">
+    <pa-form-field>
+      <p-multiSelect [options]="[]"
+                     appendTo="body"
+                     optionLabel="name"
+                     placeholder="Jak często?"
+                     [(ngModel)]="newReminderValue.frequency"></p-multiSelect>
+    </pa-form-field>
+    <pa-form-field>
+      <p-calendar placeholder="Od kiedy?"
+                  appendTo="body"
+                  [(ngModel)]="newReminderValue.wateringObject"></p-calendar>
+    </pa-form-field>
+    <pa-form-field>
+      <p-dropdown placeholder="Roślina/Grupa"
+                  appendTo="body"
+                  [options]="[]"
+                  [(ngModel)]="newReminderValue.frequency"></p-dropdown>
+    </pa-form-field>
+
+    <button pButton
+            type="button"
+            label="Anuluj"
+            (click)="isRemindActive=false"></button>
+    <button pButton
+            type="button"
+            label="Zapisz"
+            (click)="isRemindActive=false"></button>
+
+  </div>
+</p-dialog>

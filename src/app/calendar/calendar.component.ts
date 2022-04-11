@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CalendarOptions} from "@fullcalendar/angular";
+import {WateringReminder} from "../../model/reminder.model";
 
 @Component({
   selector: 'app-calendar',
@@ -8,8 +9,18 @@ import {CalendarOptions} from "@fullcalendar/angular";
 })
 export class CalendarComponent implements OnInit {
   calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth'
+    initialView: 'dayGridMonth',
+    dateClick: event => {
+      console.log(event)
+      this.newReminderValue = new WateringReminder({start: event.date})
+      this.isRemindActive = true;
+    }
   };
+
+  isRemindActive = false;
+
+  newReminderValue = new WateringReminder();
+
   constructor() { }
 
   ngOnInit(): void {
