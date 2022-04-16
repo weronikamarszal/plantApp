@@ -1,21 +1,24 @@
 <h2>Fikus</h2>
 <a routerLink="/my-plant">
-  <button icon="pi pi-plus-circle" pButton pRipple type="button" label="Dodaj do moich roślin"
-          class="p-button-rounded p-button-success">
+  <button icon="pi pi-plus-circle"
+          pButton
+          pRipple
+          type="button"
+          label="Dodaj do moich roślin"
+          class="p-button-rounded p-button-outlined p-button-success">
   </button>
 </a>
 <p></p>
 
-<p-carousel [value]="plants" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
+<p-carousel [value]="plants"
+            styleClass="custom-carousel"
+            [numVisible]="3"
+            [numScroll]="1"
+            [circular]="true"
             [autoplayInterval]="3000">
-  <ng-template let-product pTemplate="item">
-    <div class="product-item">
-      <div class="product-item-content">
-        <div class="p-mb-3">
-          <img src="assets/images/{{product.image}}" [alt]="product.name" style="width: 20vw"/>
-        </div>
-      </div>
-    </div>
+  <ng-template let-product
+               pTemplate="item">
+    <app-carousel-item [product]="product"></app-carousel-item>
   </ng-template>
 </p-carousel>
 

@@ -39,14 +39,6 @@
   </ng-template>
   <ng-template let-product
                pTemplate="item">
-    <div class="product-item">
-      <div class="product-item-content">
-        <img src="assets/images/{{product.image}}"
-             [alt]="product.name"
-             style="width: 20vw"
-             class="product-item-image"/>
-        <div class="product-item-label">{{product.name}}</div>
-      </div>
-    </div>
+    <app-carousel-item [product]="product"></app-carousel-item>
   </ng-template>
 </p-carousel>

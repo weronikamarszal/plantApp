@@ -1,0 +1,13 @@
+.product-item-content {
+  text-align: center;
+
+  .product-item-image {
+    box-shadow: -20px -20px 0 0px #194d3c;
+    margin-top: 20px;
+    border-radius: 4px;
+  }
+
+  .product-item-label {
+    text-transform: capitalize;
+  }
+}

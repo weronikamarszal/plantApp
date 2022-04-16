@@ -36,6 +36,7 @@ import {CheckboxModule} from "primeng/checkbox";
 import {EditGroupComponent} from './edit-group/edit-group.component';
 import {FormsModule} from "@angular/forms";
 import {DropdownModule} from "primeng/dropdown";
+import { CarouselItemComponent } from './search/carousel-item/carousel-item.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -56,7 +57,8 @@ FullCalendarModule.registerPlugins([
     PlantsDiaryComponent,
     GroupComponent,
     AddGroupComponent,
-    EditGroupComponent
+    EditGroupComponent,
+    CarouselItemComponent
   ],
   imports: [
     HttpClientModule,
