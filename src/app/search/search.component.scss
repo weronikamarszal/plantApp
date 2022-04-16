@@ -1,0 +1,31 @@
+app-search {
+
+  .search-panel {
+    width: 80%;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+
+  .product-item-content {
+    text-align: center;
+
+    .product-item-image {
+      box-shadow: -20px -20px 0 0px #194d3c;
+      margin-top: 20px;
+    }
+
+    .product-item-label {
+      text-transform: capitalize;
+    }
+  }
+
+  .p-carousel .p-carousel-content {
+    .p-carousel-prev, .p-carousel-next {
+      color: #FFFFFF
+    }
+  }
+
+  .header {
+    text-align: center;
+  }
+}

@@ -1,25 +1,51 @@
-<div class="p-inputgroup">
-  <input type="text" pInputText placeholder="Keyword">
-  <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
+<div class="search-panel">
+  <div class="field-container">
+    <label for="byName">Wyszukaj po nazwie</label>
+    <div class="p-inputgroup input-container">
+      <input type="text"
+             id="byName"
+             pInputText>
+      <button type="button"
+              pButton
+              pRipple
+              icon="pi pi-search"
+              styleClass="p-button-warn"></button>
+    </div>
+  </div>
+  <p></p>
+  <div class="field-container">
+    <label for="byTags">Wyszukaj po tagach</label>
+    <div class="p-inputgroup input-container ui-fluid">
+      <p-multiSelect [options]="[]" inputId="byTags"
+                     optionLabel="name"></p-multiSelect>
+      <button type="button"
+              routerLink="/search-result"
+              pButton
+              pRipple
+              icon="pi pi-search"
+              styleClass="p-button-warn"></button>
+    </div>
+  </div>
 </div>
 <p></p>
-<div class="p-inputgroup ui-fluid">
-  <p-multiSelect [options]="[]" optionLabel="name" placeholder="select"></p-multiSelect>
-  <a routerLink="/search-result">
-  <button type="button" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
-  </a>
-</div>
-<p></p>
-<p-carousel [value]="plants" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="3000">
+<p-carousel [value]="plants"
+            styleClass="custom-carousel"
+            [numVisible]="3"
+            [numScroll]="1"
+            [circular]="true"
+            [autoplayInterval]="0">
   <ng-template pTemplate="header">
-    <h5>Najpopularniejsze</h5>
+    <h3 class="header">← Najpopularniejsze →</h3>
   </ng-template>
-  <ng-template let-product pTemplate="item">
+  <ng-template let-product
+               pTemplate="item">
     <div class="product-item">
       <div class="product-item-content">
-        <div class="p-mb-3">
-          <img src="assets/images/{{product.image}}" [alt]="product.name" style="width: 20vw"/>
-        </div>
+        <img src="assets/images/{{product.image}}"
+             [alt]="product.name"
+             style="width: 20vw"
+             class="product-item-image"/>
+        <div class="product-item-label">{{product.name}}</div>
       </div>
     </div>
   </ng-template>
