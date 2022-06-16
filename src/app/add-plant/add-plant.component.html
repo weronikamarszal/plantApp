@@ -8,15 +8,19 @@
   <p-divider></p-divider>
 <div>
   <h3>Dodaj własną roślinę</h3>
+  <span class="space-v"></span>
   <pa-form-field>
     <input pInputText placeholder="Nazwa">
   </pa-form-field>
+  <span class="space-v"></span>
   <pa-form-field>
     <input pInputText placeholder="Opis">
   </pa-form-field>
+  <span class="space-v"></span>
   <pa-form-field>
     <p-multiSelect [options]="[]" optionLabel="name" placeholder="Dodaj do grupy"></p-multiSelect>
   </pa-form-field>
+  <span class="space-v"></span>
   <pa-form-field>
     <p-fileUpload styleClass="upload-input p-button-icon-right"
                   [ngStyle]="{width: '100%'}"
@@ -27,6 +31,8 @@
 
 </div>
 
+  <span class="space-v"></span>
+  <span class="space-v"></span>
 <div>
   <label for="reminder"> Ustaw przypomnienie o podlewaniu </label>
   <p-inputSwitch inputId="reminder" (onChange)="onReminderChange($event)"></p-inputSwitch>

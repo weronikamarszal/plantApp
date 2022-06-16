@@ -3,6 +3,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-search',
@@ -11,6 +12,11 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class SearchComponent implements OnInit {
+  filterValue = {
+    name:'',
+    tags: [],
+  }
+
   plants: any = [
     {
       image: 'fikus.jpeg',
@@ -33,10 +39,26 @@ export class SearchComponent implements OnInit {
       name: 'strelicja'
     },
   ];
+  tagOptions = [{name: 'Duże', id: 1},{name: 'Małe', id: 2}];
 
-  constructor() { }
+  searchResult = [];
+
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
   ngOnInit(): void {
   }
 
+  /**
+   * <kod 2>
+   */
+  search() {
+    this.httpClient.get<any>(this.parseFilterValue())
+      .subscribe(response => this.searchResult = response)
+  }
+
+  parseFilterValue() {
+    return `/api/plants?join=tags&filter=name||$contL||${this.filterValue.name}&filter=tags.id||$in||${this.filterValue.tags}`
+  }
 }

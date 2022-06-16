@@ -2,10 +2,12 @@
   <div class="field-container">
     <label for="byName">Wyszukaj po nazwie</label>
     <div class="p-inputgroup input-container">
-      <input type="text"
+      <input [(ngModel)]="filterValue.name"
+             type="text"
              id="byName"
              pInputText>
-      <button type="button"
+      <button (click)="search()"
+              type="button"
               pButton
               pRipple
               icon="pi pi-search"
@@ -16,10 +18,13 @@
   <div class="field-container">
     <label for="byTags">Wyszukaj po tagach</label>
     <div class="p-inputgroup input-container ui-fluid">
-      <p-multiSelect [options]="[]" inputId="byTags"
-                     optionLabel="name"></p-multiSelect>
-      <button type="button"
-              routerLink="/search-result"
+      <p-multiSelect [(ngModel)]="filterValue.tags"
+                     [options]="tagOptions"
+                     inputId="byTags"
+                     optionLabel="name" display="chip"
+                     optionValue="id"></p-multiSelect>
+      <button (click)="search()"
+              type="button"
               pButton
               pRipple
               icon="pi pi-search"

@@ -12,10 +12,10 @@ export class MyPlantComponent implements OnInit {
       image: 'fikus.jpeg'
     },
     {
-      image: 'fikus.jpeg'
+      image: 'fikus3.jpeg'
     },
     {
-      image: 'fikus.jpeg'
+      image: 'fikus2.jpeg'
     },
   ]
 

@@ -1,14 +1,23 @@
 <h2>Fikus</h2>
 <div>
-  <button pButton pRipple type="button" label="Dodaj własną nazwę"
+  <button pButton
+          pRipple
+          type="button"
+          label="Dodaj własną nazwę"
           class="p-button-rounded p-button-outlined p-button-success">
   </button>
   <span class="space"></span>
-  <button pButton pRipple type="button" label="Dodaj zdjęcie"
+  <button pButton
+          pRipple
+          type="button"
+          label="Dodaj zdjęcie"
           class="p-button-rounded p-button-outlined p-button-success">
   </button>
   <span class="space"></span>
-  <button pButton pRipple type="button" label="Dodaj do grupy"
+  <button pButton
+          pRipple
+          type="button"
+          label="Dodaj do grupy"
           class="p-button-rounded p-button-outlined p-button-success">
   </button>
 </div>
@@ -18,45 +27,66 @@
 <div class="flex align-center">
   <label for="reminder"> Ustaw przypomnienie o podlewaniu </label>
   <span class="space"></span>
-  <p-inputSwitch inputId="reminder" (onChange)="onReminderChange($event)"></p-inputSwitch>
+  <p-inputSwitch inputId="reminder"
+                 (onChange)="onReminderChange($event)"></p-inputSwitch>
 </div>
 
 <span class="space-v"></span>
 
-<p-carousel [value]="plants" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
+<p-carousel [value]="plants"
+            styleClass="custom-carousel"
+            [numVisible]="3"
+            [numScroll]="1"
+            [circular]="true"
             [autoplayInterval]="3000">
-  <ng-template let-product pTemplate="item">
+  <ng-template let-product
+               pTemplate="item">
     <app-carousel-item [product]="product"></app-carousel-item>
   </ng-template>
 </p-carousel>
 
 <div>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam turpis a nulla sodales tempor. Suspendisse
-  imperdiet facilisis dolor, eu maximus lorem hendrerit eu. Phasellus ullamcorper leo vitae lacinia dapibus.
-  Pellentesque eleifend congue diam vel hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-  per inceptos himenaeos. Fusce sagittis ante at dictum facilisis. Quisque eu mauris nunc. Maecenas vitae est nulla.
-  Suspendisse accumsan neque in feugiat tristique. Mauris semper rhoncus mi, non elementum tortor vestibulum vitae.
-  Mauris neque mi, ultricies et sodales at, sollicitudin ac ex. Aenean egestas commodo erat, non dapibus erat. Fusce
-  pellentesque massa non auctor aliquam.
+  Fikus jest bardzo elegancką i modną rośliną domową, która tworzy niewielkie drzewa o dużych, błyszczących liściach. Jajowate
+  blaszki liściowe są regularnie rozmieszczone na całej długości pędów, a u starszych osobników posiadających zdrewniały
+  pień, oblepiają gęsto koronę drzewka. Zieleń liści tej odmiany jest bardzo ciemna, a spód blaszek liściowych brunatno
+  zabarwiony, co nadaje całej roślinie czekoladowej barwy. Figowiec 'Abidjan' rośnie dość wolno i swoje docelowe
+  rozmiary (ok 100 -150 cm wysokości) osiąga po kilku latam uprawy, później zagęszcza się i stanowi ozdobę w postaci
+  niewielkiego drzewka. Jest mało wymagającą rośliną domową.
 </div>
 
 <span class="space-v"></span>
 
 <a routerLink="/plant">
-  <button icon="pi pi-minus-circle" pButton pRipple type="button" label="Usuń z moich roślin"
+  <button icon="pi pi-minus-circle"
+          pButton
+          pRipple
+          type="button"
+          label="Usuń z moich roślin"
           class="p-button-rounded p-button-outlined p-button-success">
   </button>
 </a>
 
-<p-dialog [closable]="false" header="Przypomnienie o podlewaniu" [(visible)]="isReminderChecked">
+<p-dialog [closable]="false"
+          header="Przypomnienie o podlewaniu"
+          [(visible)]="isReminderChecked">
   <pa-form-field>
-    <p-multiSelect [options]="[]" appendTo="body" optionLabel="name" placeholder="Jak często?"></p-multiSelect>
+    <p-multiSelect [options]="[]"
+                   appendTo="body"
+                   optionLabel="name"
+                   placeholder="Jak często?"></p-multiSelect>
   </pa-form-field>
   <pa-form-field>
-    <p-calendar placeholder="Od kiedy?" appendTo="body"></p-calendar>
+    <p-calendar placeholder="Od kiedy?"
+                appendTo="body"></p-calendar>
   </pa-form-field>
 
-  <button pButton type="button" label="Anuluj" (click)="isReminderChecked=false" ></button>
-  <button pButton type="button" label="Zapisz" (click)="isReminderChecked=false"></button>
+  <button pButton
+          type="button"
+          label="Anuluj"
+          (click)="isReminderChecked=false"></button>
+  <button pButton
+          type="button"
+          label="Zapisz"
+          (click)="isReminderChecked=false"></button>
 
 </p-dialog>
